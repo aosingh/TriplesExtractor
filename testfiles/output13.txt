@@ -1,0 +1,36 @@
+Input: While Turkey has a history of coups , the country has changed considerably since its last , in 1997 , and Mr. Ulfelder stressed that what mattered more was its nearly 20 years without one .
+Parse:
+changed VBN ROOT
+ +-- has VBZ advcl
+ |   +-- While IN mark
+ |   +-- Turkey NNP nsubj
+ |   +-- history NN dobj
+ |       +-- a DT det
+ |       +-- of IN prep
+ |           +-- coups NNS pobj
+ +-- , , punct
+ +-- country NN nsubj
+ |   +-- the DT det
+ +-- has VBZ aux
+ +-- considerably RB advmod
+ +-- since IN prep
+ |   +-- last JJ pobj
+ |       +-- its PRP$ poss
+ +-- in IN prep
+ |   +-- 1997 CD pobj
+ +-- and CC cc
+ +-- stressed VBD conj
+ |   +-- Ulfelder NNP nsubj
+ |   |   +-- Mr. NNP nn
+ |   +-- years NNS ccomp
+ |       +-- that IN mark
+ |       +-- mattered VBD csubj
+ |       |   +-- what WP nsubj
+ |       |   +-- more JJR advmod
+ |       +-- was VBD cop
+ |       +-- its PRP$ poss
+ |       +-- 20 CD num
+ |       |   +-- nearly RB quantmod
+ |       +-- without IN prep
+ |           +-- one CD pobj
+ +-- . . punct

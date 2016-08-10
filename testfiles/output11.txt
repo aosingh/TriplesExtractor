@@ -1,0 +1,31 @@
+Input: Jay Ulfelder , who works in the area of political forecasting , has developed a mathematical model that synthesizes this data to predict a country 's level of risk .
+Parse:
+developed VBN ROOT
+ +-- Ulfelder NNP nsubj
+ |   +-- Jay NNP nn
+ |   +-- , , punct
+ |   +-- works VBZ rcmod
+ |       +-- who WP nsubj
+ |       +-- in IN prep
+ |           +-- area NN pobj
+ |               +-- the DT det
+ |               +-- of IN prep
+ |                   +-- forecasting NN pobj
+ |                       +-- political JJ amod
+ +-- has VBZ aux
+ +-- model NN dobj
+ |   +-- a DT det
+ |   +-- mathematical JJ amod
+ |   +-- synthesizes VBZ rcmod
+ |       +-- that WDT nsubj
+ |       +-- data NNS dobj
+ |       |   +-- this DT det
+ |       +-- predict VB xcomp
+ |           +-- to TO aux
+ |           +-- level NN dobj
+ |               +-- country NN poss
+ |               |   +-- a DT det
+ |               |   +-- 's POS possessive
+ |               +-- of IN prep
+ |                   +-- risk NN pobj
+ +-- . . punct

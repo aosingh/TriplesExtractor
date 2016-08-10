@@ -1,0 +1,23 @@
+Input: Political scientists , by tracking factors like economic trends , political freedoms and public health , have identified several predictive patterns .
+Parse:
+identified VBN ROOT
+ +-- scientists NNS nsubj
+ |   +-- Political JJ amod
+ +-- , , punct
+ +-- by IN prep
+ |   +-- tracking VBG pcomp
+ |       +-- factors NNS dobj
+ |           +-- like IN prep
+ |               +-- trends NNS pobj
+ |                   +-- economic JJ amod
+ |                   +-- , , punct
+ |                   +-- freedoms NNS conj
+ |                   |   +-- political JJ amod
+ |                   +-- and CC cc
+ |                   +-- health NN conj
+ |                       +-- public JJ amod
+ +-- have VBP aux
+ +-- patterns NNS dobj
+ |   +-- several JJ amod
+ |   +-- predictive JJ amod
+ +-- . . punct

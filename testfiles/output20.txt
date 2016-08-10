@@ -1,0 +1,30 @@
+Input: The attacker in Baton Rouge was identified Sunday afternoon as Gavin Long , according to two law enforcement officials familiar with the investigation. Authorities are exploring whether more than one person may have played a role in the incident , according to both officials , who asked not to be identified discussing an ongoing investigation
+Parse:
+identified VBN ROOT
+ +-- attacker NN nsubjpass
+ |   +-- The DT det
+ |   +-- in IN prep
+ |       +-- Rouge NNP pobj
+ |           +-- Baton NNP nn
+ +-- was VBD auxpass
+ +-- afternoon NN dobj
+ |   +-- Sunday NNP nn
+ +-- as IN prep
+ |   +-- Long NNP pobj
+ |       +-- Gavin NNP nn
+ +-- , , punct
+ +-- according VBG prep
+     +-- to IN pcomp
+         +-- officials NNS pobj
+             +-- both DT det
+             +-- , , punct
+             +-- asked VBD rcmod
+                 +-- who WP nsubj
+                 +-- identified VBN xcomp
+                     +-- not RB neg
+                     +-- to TO aux
+                     +-- be VB auxpass
+                     +-- discussing VBG xcomp
+                         +-- investigation NN dobj
+                             +-- an DT det
+                             +-- ongoing JJ amod

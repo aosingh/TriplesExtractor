@@ -1,0 +1,52 @@
+Input: When the uprising represents only a faction of officers , Mr. Klaas said , the confidence game can also require quickly seizing top leaders and persuading or forcing a senior officer to publicly declare the coup 's victory , creating an appearance of success before anyone figures out what happened .
+Parse:
+said VBD ROOT
+ +-- represents VBZ advcl
+ |   +-- When WRB advmod
+ |   +-- uprising NN nsubj
+ |   |   +-- the DT det
+ |   +-- faction NN dobj
+ |       +-- only RB advmod
+ |       +-- a DT det
+ |       +-- of IN prep
+ |           +-- officers NNS pobj
+ +-- , , punct
+ +-- Klaas NNP nsubj
+ |   +-- Mr. NNP nn
+ +-- require VB ccomp
+ |   +-- game NN nsubj
+ |   |   +-- the DT det
+ |   |   +-- confidence NN nn
+ |   +-- can MD aux
+ |   +-- also RB advmod
+ |   +-- quickly RB advmod
+ |   +-- seizing VBG ccomp
+ |       +-- leaders NNS dobj
+ |       |   +-- top JJ amod
+ |       +-- and CC cc
+ |       +-- persuading VBG conj
+ |           +-- or CC cc
+ |           +-- forcing VBG conj
+ |           +-- officer NN dobj
+ |           |   +-- a DT det
+ |           |   +-- senior JJ amod
+ |           +-- declare VB xcomp
+ |               +-- to TO aux
+ |               +-- publicly RB advmod
+ |               +-- victory NN dobj
+ |               |   +-- coup NN poss
+ |               |       +-- the DT det
+ |               |       +-- 's POS possessive
+ |               +-- , , punct
+ |               +-- creating VBG partmod
+ |                   +-- appearance NN dobj
+ |                   |   +-- an DT det
+ |                   |   +-- of IN prep
+ |                   |       +-- success NN pobj
+ |                   +-- figures VBZ advcl
+ |                       +-- before IN mark
+ |                       +-- anyone NN nsubj
+ |                       +-- out RP prt
+ |                       +-- happened VBD ccomp
+ |                           +-- what WP nsubj
+ +-- . . punct

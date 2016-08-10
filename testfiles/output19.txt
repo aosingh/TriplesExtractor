@@ -1,0 +1,59 @@
+Input: Agents for the FBI and the Bureau of Alcohol , Tobacco , Firearms and Explosives were on the scene in Baton Rouge responding to the shooting , according to Attorney General Loretta E. Lynch. She said in a statement that there is no place in the United States for such appalling violence and strongly condemned the shooting .
+Parse:
+were VBD ROOT
+ +-- Agents NNS nsubj
+ |   +-- for IN prep
+ |       +-- FBI NNP pobj
+ |           +-- the DT det
+ |           +-- and CC cc
+ |           +-- Bureau NNP conj
+ |               +-- the DT det
+ |               +-- of IN prep
+ |                   +-- Alcohol NNP pobj
+ |                       +-- , , punct
+ |                       +-- Tobacco NNP conj
+ |                       +-- Firearms NNPS conj
+ |                       +-- and CC cc
+ |                       +-- Explosives NNS conj
+ +-- on IN prep
+ |   +-- scene NN pobj
+ |       +-- the DT det
+ +-- in IN prep
+ |   +-- Rouge NNP pobj
+ |       +-- Baton NNP nn
+ +-- responding VBG xcomp
+ |   +-- to IN prep
+ |       +-- shooting NN pobj
+ |           +-- the DT det
+ +-- , , punct
+ +-- said VBD ccomp
+ |   +-- according VBG prep
+ |   |   +-- to IN pcomp
+ |   |       +-- Lynch. NNP pobj
+ |   |           +-- General NNP nn
+ |   |           |   +-- Attorney NNP nn
+ |   |           +-- Loretta NNP nn
+ |   |           +-- E. NNP nn
+ |   +-- She PRP nsubj
+ |   +-- in IN prep
+ |   |   +-- statement NN pobj
+ |   |       +-- a DT det
+ |   +-- is VBZ ccomp
+ |       +-- that IN mark
+ |       +-- there EX expl
+ |       +-- place NN nsubj
+ |       |   +-- no DT det
+ |       |   +-- in IN prep
+ |       |   |   +-- States NNP pobj
+ |       |   |       +-- the DT det
+ |       |   |       +-- United NNP nn
+ |       |   +-- for IN prep
+ |       |       +-- violence NN pobj
+ |       |           +-- such JJ amod
+ |       |           +-- appalling JJ amod
+ |       +-- and CC cc
+ |       +-- strongly RB advmod
+ |       +-- condemned VBD conj
+ |           +-- shooting NN dobj
+ |               +-- the DT det
+ +-- . . punct

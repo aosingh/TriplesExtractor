@@ -1,0 +1,33 @@
+Input: ISIS claimed responsibility Saturday for suicide blasts that a monitoring group said left at least 20 people dead and more wounded in a predominantly Shiite suburb of Syria 's capital .
+Parse:
+claimed VBD ROOT
+ +-- ISIS NNP nsubj
+ +-- responsibility NN dobj
+ +-- Saturday NNP tmod
+ +-- for IN prep
+ |   +-- blasts NNS pobj
+ |       +-- suicide NN nn
+ |       +-- said VBD rcmod
+ |           +-- that IN dobj
+ |           +-- group NN nsubj
+ |           |   +-- a DT det
+ |           |   +-- monitoring NN nn
+ |           +-- left VBN ccomp
+ |               +-- people NNS dobj
+ |               |   +-- 20 CD num
+ |               |       +-- at RB dep
+ |               |           +-- least RBS pobj
+ |               +-- dead JJ dep
+ |               |   +-- and CC cc
+ |               |   +-- wounded JJ conj
+ |               |       +-- more RBR advmod
+ |               +-- in IN prep
+ |                   +-- suburb NN pobj
+ |                       +-- a DT det
+ |                       +-- Shiite JJ amod
+ |                       |   +-- predominantly RB advmod
+ |                       +-- of IN prep
+ |                           +-- capital NN pobj
+ |                               +-- Syria NNP poss
+ |                                   +-- 's POS possessive
+ +-- . . punct

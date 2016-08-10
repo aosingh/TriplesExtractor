@@ -1,0 +1,23 @@
+Input: Three police officers were killed and three others injured in a shooting Sunday morning in Baton Rouge , authorities said .
+Parse:
+said VBD ROOT
+ +-- killed VBN ccomp
+ |   +-- officers NNS nsubjpass
+ |   |   +-- Three CD num
+ |   |   +-- police NN nn
+ |   +-- were VBD auxpass
+ |   +-- and CC cc
+ |   +-- injured VBN conj
+ |   |   +-- others NNS nsubj
+ |   |       +-- three CD num
+ |   +-- in IN prep
+ |       +-- morning NN pobj
+ |           +-- a DT det
+ |           +-- shooting VBG amod
+ |           +-- Sunday NNP nn
+ |           +-- in IN prep
+ |               +-- Rouge NNP pobj
+ |                   +-- Baton NNP nn
+ +-- , , punct
+ +-- authorities NNS nsubj
+ +-- . . punct

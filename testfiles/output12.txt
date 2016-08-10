@@ -1,0 +1,33 @@
+Input: Mr. Ulfelder has also found that a country is less likely to face a coup when there is armed conflict in nearby states , perhaps because of a rally-around-the-flag effect .
+Parse:
+found VBN ROOT
+ +-- Ulfelder NNP nsubj
+ |   +-- Mr. NNP nn
+ +-- has VBZ aux
+ +-- also RB advmod
+ +-- likely JJ ccomp
+ |   +-- that IN mark
+ |   +-- country NN nsubj
+ |   |   +-- a DT det
+ |   +-- is VBZ cop
+ |   +-- less RBR advmod
+ |   +-- face VB xcomp
+ |   |   +-- to TO aux
+ |   |   +-- coup NN dobj
+ |   |       +-- a DT det
+ |   +-- is VBZ advcl
+ |       +-- when WRB advmod
+ |       +-- there EX expl
+ |       +-- conflict NN nsubj
+ |       |   +-- armed JJ amod
+ |       |   +-- in IN prep
+ |       |       +-- states NNS pobj
+ |       |           +-- nearby JJ amod
+ |       +-- , , punct
+ |       +-- of IN prep
+ |           +-- perhaps RB advmod
+ |           +-- because IN mwe
+ |           +-- effect NN pobj
+ |               +-- a DT det
+ |               +-- rally-around-the-flag JJ amod
+ +-- . . punct

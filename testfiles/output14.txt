@@ -1,0 +1,41 @@
+Input: Another crucial factor is what experts call elite fragmentation. If divisions open up among powerful elites -- elected officials , business leaders , generals , judges and so on -- their competition for resources and control can culminate in a coup .
+Parse:
+is VBZ ROOT
+ +-- factor NN nsubj
+ |   +-- Another DT det
+ |   +-- crucial JJ amod
+ +-- officials NNS dep
+ |   +-- call VBP dep
+ |   |   +-- what WP dobj
+ |   |   +-- experts NNS nsubj
+ |   |   +-- elite NN prep
+ |   |   |   +-- fragmentation. NN pobj
+ |   |   +-- open VBP advcl
+ |   |       +-- If IN mark
+ |   |       +-- divisions NNS nsubj
+ |   |       +-- up RP prt
+ |   |       +-- among IN prep
+ |   |           +-- elites NNS pobj
+ |   |               +-- powerful JJ amod
+ |   +-- -- : punct
+ |   +-- elected VBN amod
+ |   +-- , , punct
+ |   +-- leaders NNS conj
+ |   |   +-- business NN nn
+ |   +-- generals NNS conj
+ |   +-- judges NNS conj
+ |   +-- and CC cc
+ |   +-- on RB advmod
+ |   |   +-- so RB advmod
+ |   +-- culminate VB dep
+ |       +-- competition NN nsubj
+ |       |   +-- their PRP$ poss
+ |       |   +-- for IN prep
+ |       |       +-- resources NNS pobj
+ |       |           +-- and CC cc
+ |       |           +-- control NN conj
+ |       +-- can MD aux
+ |       +-- in IN prep
+ |           +-- coup NN pobj
+ |               +-- a DT det
+ +-- . . punct

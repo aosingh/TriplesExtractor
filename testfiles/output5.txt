@@ -1,0 +1,12 @@
+Input: James visits a company which has held seminar in London
+Parse:
+visits VBZ ROOT
+ +-- James NNP nsubj
+ +-- company NN dobj
+     +-- a DT det
+     +-- held VBN rcmod
+         +-- which WDT nsubj
+         +-- has VBZ aux
+         +-- seminar NN dobj
+         +-- in IN prep
+             +-- London NNP pobj

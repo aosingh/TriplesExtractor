@@ -1,0 +1,8 @@
+Input: Samsung has held seminar in London
+Parse:
+held VBN ROOT
+ +-- Samsung NNP nsubj
+ +-- has VBZ aux
+ +-- seminar NN dobj
+ +-- in IN prep
+     +-- London NNP pobj

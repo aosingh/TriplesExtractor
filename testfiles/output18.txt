@@ -1,0 +1,45 @@
+Input: While police offered few immediate details about the exact origins of the incident , they say the violent incident unfolded early Sunday when officers responded to reports of a man carrying a rifle in an area filled with grocery stores and other businesses
+Parse:
+say VBP ROOT
+ +-- offered VBD advcl
+ |   +-- While IN mark
+ |   +-- police NNS nsubj
+ |   +-- details NNS dobj
+ |       +-- few JJ amod
+ |       +-- immediate JJ amod
+ |       +-- about IN prep
+ |           +-- origins NNS pobj
+ |               +-- the DT det
+ |               +-- exact JJ amod
+ |               +-- of IN prep
+ |                   +-- incident NN pobj
+ |                       +-- the DT det
+ +-- , , punct
+ +-- they PRP nsubj
+ +-- unfolded VBD ccomp
+     +-- incident NN nsubj
+     |   +-- the DT det
+     |   +-- violent JJ amod
+     +-- Sunday NNP tmod
+     |   +-- early JJ amod
+     +-- responded VBD advcl
+         +-- when WRB advmod
+         +-- officers NNS nsubj
+         +-- to IN prep
+             +-- reports NNS pobj
+                 +-- of IN prep
+                     +-- man NN pobj
+                         +-- a DT det
+                         +-- carrying VBG partmod
+                             +-- rifle NN dobj
+                             |   +-- a DT det
+                             +-- in IN prep
+                                 +-- area NN pobj
+                                     +-- an DT det
+                                     +-- filled VBN partmod
+                                         +-- with IN prep
+                                             +-- stores NNS pobj
+                                                 +-- grocery NN nn
+                                                 +-- and CC cc
+                                                 +-- businesses NNS conj
+                                                     +-- other JJ amod

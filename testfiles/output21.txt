@@ -1,0 +1,48 @@
+Input: Not two days have passed since the bloody coup attempt in Turkey and at least 6000 people have already been detained , Turkish officials say , as President Recep Tayyip Erdogan vows to clean all state institutions of the virus of Fethullah Gulen supporters .
+Parse:
+say VBP ROOT
+ +-- passed VBN ccomp
+ |   +-- days NNS nsubj
+ |   |   +-- two CD num
+ |   |       +-- Not RB quantmod
+ |   +-- have VBP aux
+ |   +-- since IN prep
+ |   |   +-- attempt NN pobj
+ |   |       +-- the DT det
+ |   |       +-- bloody JJ amod
+ |   |       +-- coup NN nn
+ |   |       +-- in IN prep
+ |   |           +-- Turkey NNP pobj
+ |   +-- and CC cc
+ |   +-- detained VBN conj
+ |       +-- 6 CD dep
+ |       |   +-- at RB dep
+ |       |   |   +-- least RBS pobj
+ |       |   +-- , , punct
+ |       +-- people NNS nsubjpass
+ |       |   +-- 000 CD num
+ |       +-- have VBP aux
+ |       +-- already RB advmod
+ |       +-- been VBN auxpass
+ +-- , , punct
+ +-- officials NNS nsubj
+ |   +-- Turkish JJ amod
+ +-- vows VBZ advcl
+ |   +-- as IN mark
+ |   +-- Erdogan NNP nsubj
+ |   |   +-- President NNP nn
+ |   |   +-- Recep NNP nn
+ |   |   +-- Tayyip NNP nn
+ |   +-- clean VB xcomp
+ |       +-- to TO aux
+ |       +-- institutions NNS dobj
+ |           +-- all DT det
+ |           +-- state NN nn
+ |           +-- of IN prep
+ |               +-- virus NN pobj
+ |                   +-- the DT det
+ |                   +-- of IN prep
+ |                       +-- supporters NNS pobj
+ |                           +-- Fethullah NNP nn
+ |                           +-- Gulen NNP nn
+ +-- . . punct

@@ -1,0 +1,36 @@
+Input: Rebels deployed tanks and air power in a show of force in Istanbul and Ankara , but this was not enough to intimidate the rest of the military , which eventually overcame them .
+Parse:
+deployed VBD ROOT
+ +-- Rebels NNS nsubj
+ +-- tanks NNS dobj
+ |   +-- and CC cc
+ |   +-- power NN conj
+ |       +-- air NN nn
+ +-- in IN prep
+ |   +-- show NN pobj
+ |       +-- a DT det
+ |       +-- of IN prep
+ |           +-- force NN pobj
+ |               +-- in IN prep
+ |                   +-- Istanbul NNP pobj
+ |                       +-- and CC cc
+ |                       +-- Ankara NNP conj
+ +-- , , punct
+ +-- but CC cc
+ +-- enough JJ conj
+ |   +-- this DT nsubj
+ |   +-- was VBD cop
+ |   +-- not RB neg
+ |   +-- intimidate VB xcomp
+ |       +-- to TO aux
+ |       +-- rest NN dobj
+ |           +-- the DT det
+ |           +-- of IN prep
+ |               +-- military NN pobj
+ |                   +-- the DT det
+ |                   +-- , , punct
+ |                   +-- overcame VBD rcmod
+ |                       +-- which WDT nsubj
+ |                       +-- eventually RB advmod
+ |                       +-- them PRP dobj
+ +-- . . punct

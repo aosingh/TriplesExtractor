@@ -1,0 +1,13 @@
+Input: Turkish President Erdogan appears in Istanbul to denounce army coup attempt
+Parse:
+appears VBZ ROOT
+ +-- Erdogan NNP nsubj
+ |   +-- President NNP nn
+ |       +-- Turkish JJ amod
+ +-- in IN prep
+ |   +-- Istanbul NNP pobj
+ +-- denounce VB xcomp
+     +-- to TO aux
+     +-- attempt NN dobj
+         +-- army NN nn
+         +-- coup NN nn

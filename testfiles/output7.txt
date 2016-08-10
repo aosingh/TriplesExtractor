@@ -1,0 +1,10 @@
+Input: Smart Meera and Ram go to the School
+Parse:
+go VB ROOT
+ +-- Meera NNP nsubj
+ |   +-- Smart NNP nn
+ |   +-- and CC cc
+ |   +-- Ram NNP conj
+ +-- to IN prep
+     +-- School NN pobj
+         +-- the DT det

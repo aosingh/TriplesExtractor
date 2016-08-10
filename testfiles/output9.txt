@@ -1,0 +1,18 @@
+Input: Coups are usually driven not solely by individual plotters , but also by structural factors .
+Parse:
+driven VBN ROOT
+ +-- Coups NNS nsubjpass
+ +-- are VBP auxpass
+ +-- usually RB advmod
+ +-- by IN prep
+ |   +-- solely RB preconj
+ |   |   +-- not RB neg
+ |   +-- plotters NNS pobj
+ |   |   +-- individual JJ amod
+ |   +-- , , punct
+ |   +-- also RB cc
+ |   |   +-- but CC cc
+ |   +-- by IN conj
+ |       +-- factors NNS pobj
+ |           +-- structural JJ amod
+ +-- . . punct

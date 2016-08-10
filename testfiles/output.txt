@@ -1,0 +1,15 @@
+Input: A rare black squirrel has become a regular visitor to a suburban garden
+Parse:
+visitor NN ROOT
+ +-- squirrel NN nsubj
+ |   +-- A DT det
+ |   +-- rare JJ amod
+ |   +-- black JJ amod
+ +-- has VBZ aux
+ +-- become VBN cop
+ +-- a DT det
+ +-- regular JJ amod
+ +-- to IN prep
+     +-- garden NN pobj
+         +-- a DT det
+         +-- suburban JJ amod

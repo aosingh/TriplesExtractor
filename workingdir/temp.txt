@@ -1,0 +1,36 @@
+Input: A suicide bombing in the capital of Afghanistan on Saturday killed 80 people and injured more than 230 others , many of whom were taking part in a political demonstration , authorities said .
+Parse:
+said VBD ROOT
+ +-- killed VBD ccomp
+ |   +-- bombing NN nsubj
+ |   |   +-- A DT det
+ |   |   +-- suicide NN nn
+ |   |   +-- in IN prep
+ |   |   |   +-- capital NN pobj
+ |   |   |       +-- the DT det
+ |   |   |       +-- of IN prep
+ |   |   |           +-- Afghanistan NNP pobj
+ |   |   +-- on IN prep
+ |   |       +-- Saturday NNP pobj
+ |   +-- people NNS dobj
+ |   |   +-- 80 CD num
+ |   +-- and CC cc
+ |   +-- injured VBN conj
+ |       +-- others NNS dobj
+ |           +-- 230 CD num
+ |           |   +-- than IN quantmod
+ |           |       +-- more JJR mwe
+ |           +-- , , punct
+ |           +-- taking VBG rcmod
+ |               +-- many JJ nsubj
+ |               |   +-- of IN prep
+ |               |       +-- whom WP pobj
+ |               +-- were VBD aux
+ |               +-- part NN dobj
+ |               +-- in IN prep
+ |                   +-- demonstration NN pobj
+ |                       +-- a DT det
+ |                       +-- political JJ amod
+ +-- , , punct
+ +-- authorities NNS nsubj
+ +-- . . punct

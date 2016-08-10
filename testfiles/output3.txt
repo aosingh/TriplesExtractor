@@ -1,0 +1,6 @@
+Input: I am a man
+Parse:
+man NN ROOT
+ +-- I PRP nsubj
+ +-- am VBP cop
+ +-- a DT det
