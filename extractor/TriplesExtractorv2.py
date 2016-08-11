@@ -21,6 +21,7 @@ class TriplesExtractor:
         return posnode
 
 
+
     def get_verb_children(self, node, parentposnode):
         for child in self.G.successors(node):
             if child.POS in ('VBN', 'VB', 'VBD', 'VBG', 'VBP') \
@@ -168,6 +169,41 @@ class TriplesExtractor:
                 self.seen_nodes[node] = node5
                 node5 = self.build_vbz_tree(node, node5)
         return self.verbs
+
+
+    def retrieve_subject(self, verbnode):
+        for child in self.G.successors(verbnode.baseverb):
+            if child.attribute in ('nsubj', 'nsubjpass'):
+                verbnode.subject.append(child)
+        for child in self.G.predecessors(verbnode.baseverb):
+            if child.attribute in ('nsubj', 'nsubjpass'):
+                verbnode.subject.append(child)
+
+        if(verbnode.jj):
+            for child in self.G.successors(verbnode.jj):
+                if child.attribute in ('nsubj'):
+                    verbnode.subject.append(child)
+        return verbnode
+
+
+    def retrieve_objects(self, verbnode):
+        for child in self.G.successors(verbnode.baseverb):
+            if child.attribute in ('pobj', 'dobj'):
+                verbnode.objects.append(child)
+        if(verbnode.jj):
+            for edges in list(nx.bfs_edges(self.G, verbnode.jj)):
+                if edges[1].attribute == 'prep':
+                    verbnode  = self.retrieveObjectsFromPrep(verbnode, edges[1])
+        return verbnode
+
+
+    def retrieveObjectsFromPrep(self, verbnode, prepnode):
+        for child in self.G.successors(prepnode):
+            if child.attribute in ('pobj', 'dobj'):
+                verbnode.objects.append(child)
+        return verbnode
+
+
 
 
 

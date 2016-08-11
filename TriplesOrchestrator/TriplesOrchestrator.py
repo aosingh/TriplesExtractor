@@ -32,80 +32,81 @@ class Orchestrate:
                     target.close()
 
     @staticmethod
-    def traversVerbs(verbs):
+    def traversVerbs(verbs, triplesExtractor):
         for verb in verbs:
             print "Main verb is", verb.baseverb.word
-            Orchestrate.traverseRecursively(verb)
-            Orchestrate.traverseVerbSibling(verb)
+            if(verb.aux):
+                print "Aux is", verb.aux.word
+            if(verb.vbz):
+                print "VBZ is", verb.vbz.word
+            if(verb.auxpass):
+                print "AUXPASS is", verb.auxpass.word
+            if(verb.advmod):
+                print "ADVERB MOD is", verb.advmod.word
+            if(verb.jj):
+                print "JJ or NN is", verb.jj.word
+            verb = triplesExtractor.retrieve_subject(verb)
+            verb = triplesExtractor.retrieve_objects(verb)
+            for x in verb.subject:
+                print "Subject is", x.word
+            for y in verb.objects:
+                print "OBJECTS are", y.word
+            print "\n"
+            Orchestrate.traverseRecursively(verb, triplesExtractor)
+            Orchestrate.traverseVerbSibling(verb, triplesExtractor)
 
     @staticmethod
-    def traverseRecursively(verb):
+    def traverseRecursively(verb, triplesExtractor):
         if len(verb.children) == 0:
             return None
         elif len(verb.children) > 0:
             for child in verb.children:
                 print "Child verb", child.baseverb.word
-                Orchestrate.traverseRecursively(child)
-                Orchestrate.traverseVerbSibling(child)
+                if(child.aux):
+                    print "Aux is", child.aux.word
+                if(child.vbz):
+                    print "VBZ is", child.vbz.word
+                if(child.auxpass):
+                    print "AUXPASS is", child.auxpass.word
+                if(child.advmod):
+                    print "ADVERB MOD is", child.advmod.word
+                if(child.jj):
+                    print "JJ or NN is", child.jj.word
+                child = triplesExtractor.retrieve_subject(child)
+                child = triplesExtractor.retrieve_objects(child)
+                for x in child.subject:
+                    print "Subject is", x.word
+                for y in child.objects:
+                    print "OBJECTS are", y.word
+                print "\n"
+                Orchestrate.traverseRecursively(child, triplesExtractor)
+                Orchestrate.traverseVerbSibling(child, triplesExtractor)
 
     @staticmethod
-    def traverseVerbSibling(verb):
+    def traverseVerbSibling(verb, triplesExtractor):
         if len(verb.verbsibling) == 0:
             return  None
         elif len(verb.verbsibling) > 0:
             for sibling in verb.children:
                 print "sibling is", sibling.baseword.word
-                Orchestrate.traverseVerbSibling(sibling)
-                Orchestrate.traverseRecursively(sibling)
+                sibling = triplesExtractor.retrieve_subject(sibling)
+                sibling = triplesExtractor.retrieve_objects(sibling)
+                for x in sibling.subject:
+                     print "Subject is", x.word
+                for y in sibling.objects:
+                    print "OBJECTS are", y.word
+                print "\n"
+                Orchestrate.traverseVerbSibling(sibling, triplesExtractor)
+                Orchestrate.traverseRecursively(sibling, triplesExtractor)
+
+
 
     @staticmethod
     def getTriples(G, target, root):
         tripleExtractor = extractor.TriplesExtractor.TriplesExtractor(G);
-
         triplesExtractorv2 = extractor.TriplesExtractorv2.TriplesExtractor(G, root);
-
-        """
-        for verb in triplesExtractorv2.construct_verbtree_structure():
-            print "Verb is", verb.baseverb.word
-            if verb.aux:
-                print "AUX is", verb.aux.word
-            if verb.auxpass:
-                print "AUXPASS is", verb.auxpass.word
-            if verb.advmod:
-                print "ADVERB mod is", verb.advmod.word
-            if verb.parent:
-                print "parent is", verb.parent.baseverb.word
-            if verb.vbz:
-                print "VBZ is", verb.vbz.word
-            if verb.jj:
-                print "JJ is ", verb.jj.word
-            for y in verb.verbsibling:
-                print y
-                print "sibling is", y
-
-            for child in verb.children:
-                if child.vbz:
-                    print "VBZ is", child.vbz.word
-                print "Children", child.baseverb.word
-                if child.aux:
-                    print "Aux verb", child.aux.word
-                if child.auxpass:
-                    print "Auxpass", child.auxpass.word
-                if child.advmod:
-                    print "ADVERB mod is", child.advmod.word
-                if child.parent:
-                    print "Parent is", child.parent.baseverb.word
-                if child.jj:
-                    print "JJ is", child.jj.word
-                for x in child.children:
-                    print "Children of child", child
-                for y in child.verbsibling:
-                    print "Sibling is", y.baseverb.word
-                print "\n"
-            print "\n"
-        """
         verbs = triplesExtractorv2.construct_verbtree_structure()
-        Orchestrate.traversVerbs(verbs);
+        Orchestrate.traversVerbs(verbs, triplesExtractorv2);
 
 
         for verb in tripleExtractor.getVerbs():
