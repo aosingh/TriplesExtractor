@@ -14,6 +14,37 @@ git clone https://github.com/aosingh/TriplesExtractor.git
 ### Install the following
 *   [Python 2.7](https://www.python.org/download/releases/2.7/)
 *   [Syntaxnet](https://github.com/tensorflow/models/tree/master/syntaxnet) 
+    * python 2.7:
+    * python 3 support is not available yet
+    *   bazel:
+        *   **versions 0.2.0 - 0.2.2b, NOT 0.2.3**
+        *   follow the instructions [here](http://bazel.io/docs/install.html)
+    *   swig:
+        *   `apt-get install swig` on Ubuntu
+        *   `brew install swig` on OSX
+    *   protocol buffers, with a version supported by TensorFlow:
+    *   check your protobuf version with `pip freeze | grep protobuf`
+    *   upgrade to a supported version with `pip install -U protobuf==3.0.0b2`
+    *   asciitree, to draw parse trees on the console for the demo:
+        *   `pip install asciitree`
+    *   numpy, package for scientific computing:
+        *   `pip install numpy`
+Once you completed the above steps, you can build and test SyntaxNet with the
+following commands:
+
+```shell
+  git clone --recursive https://github.com/tensorflow/models.git
+  cd models/syntaxnet/tensorflow
+  ./configure
+  cd ..
+  bazel test syntaxnet/... util/utf8/...
+  # On Mac, run the following:
+  bazel test --linkopt=-headerpad_max_install_names \
+    syntaxnet/... util/utf8/...
+```
+
+Bazel should complete reporting all tests passed.
+
 *   [nltk](http://www.nltk.org/)  
 *   [nltk.data](http://www.nltk.org/data.html)
 *   [networkx](https://networkx.readthedocs.io/en/stable/download.html)
