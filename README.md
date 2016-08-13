@@ -7,7 +7,6 @@ These instructions will give you a copy of the project up and running on your lo
 
 ### Prerequesites
 The following packages are needed to run TriplesExtractor
-    
     *   [Python 2.7](https://www.python.org/download/releases/2.7/)
     *   [Syntaxnet](https://github.com/tensorflow/models/tree/master/syntaxnet) - This is needed to get the Parts-of-Speech(POS)
         tagging. Installing syntaxnet might take a while. Please read the instructions carefully.
