@@ -18,5 +18,26 @@ git clone https://github.com/aosingh/TriplesExtractor.git
 *   [nltk.data](http://www.nltk.org/data.html)
 *   [networkx](https://networkx.readthedocs.io/en/stable/download.html)
 
+### Change the configuration
+In file `TriplesExtractor/configuration/properties.py`, change the following
+
+*  `SYNTAXNET_DIRECTORY` 
+    * Path to your `models/syntaxnet` directory on your local system
+*  `INPUT_TEXT_DIR`
+    * Path to the location of your inputfiles
+*  `TEMP_WORKING_DIR`
+    * A temporary working location where the files will be kept while processing
+*   `OUTPUT_TRIPLES_DIR`
+    * Output directory where for each input file a corresponding output file with triples will be present after execution.
+ 
+Below is an example of my `TriplesExtractor/configuration/properties.py`
+```python
+    SYNTAXNET_DIRECTORY="/home/abhishek/models/syntaxnet"
+    INPUT_TEXT_DIR="/home/abhishek/PycharmProjects/TriplesExtractor/inputfiles"
+    TEMP_WORKING_DIR="/home/abhishek/PycharmProjects/TriplesExtractor/workingdir"
+    DONE_DIR="/Users/abhsingh/PycharmProjects/TripleExtractor/donedir"
+    OUTPUT_TRIPLES_DIR="/home/abhishek/PycharmProjects/TriplesExtractor/output"
+```
+
 
 
