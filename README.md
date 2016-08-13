@@ -1,5 +1,5 @@
 # TriplesExtractor
-TriplesExtractor is a Python package, which can be used to extract <Subject, Predicate, Object> triples from a document.
+TriplesExtractor is a Python package, which can be used to extract `<Subject, Predicate, Object>` triples from a document.
 
 ## Getting Started
 These instructions will give you a copy of the project up and running on your local machine for development and testing purposes.
@@ -39,5 +39,12 @@ Below is an example of my `TriplesExtractor/configuration/properties.py`
     OUTPUT_TRIPLES_DIR="/home/abhishek/PycharmProjects/TriplesExtractor/output"
 ```
 
+## Development
+Run the following python class to test if everything is correctly set.
+You can place a test input file at the `INPUT_TEXT_DIR` location.
+if the program runs successfully and exits with 0, you will find the corresponding output file at `OUTPUT_TRIPLES_DIR`
+```bash
+python TriplesExtractor/TriplesOrchestrator/TriplesOrchestrator.py
 
+``` 
 
