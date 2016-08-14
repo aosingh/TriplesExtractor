@@ -183,13 +183,26 @@ class TriplesExtractor:
             for child in self.G.successors(verbnode.jj):
                 if child.attribute in ('nsubj'):
                     verbnode.subject.append(child)
+
+        if len(verbnode.subject) == 0:
+            parent = self.G.predecessors(verbnode.baseverb)[0]
+            while parent.POS not in ('NN', 'NNS') and (parent.attribute != 'ROOT'):
+                print parent.word
+                print parent.attribute
+                parent = self.G.predecessors(parent)[0]
+            verbnode.subject.append(parent)
         return verbnode
 
 
     def retrieve_objects(self, verbnode):
         for child in self.G.successors(verbnode.baseverb):
             if child.attribute in ('pobj', 'dobj'):
+                self.retrieve_children_of_noun(child, verbnode.objects)
                 verbnode.objects.append(child)
+
+            if child.attribute in ('prep'):
+                verbnode.objects.append(child)
+                verbnode = self.retrieveObjectsFromPrep(verbnode, child)
         if(verbnode.jj):
             for edges in list(nx.bfs_edges(self.G, verbnode.jj)):
                 if edges[1].attribute == 'prep':
@@ -199,9 +212,20 @@ class TriplesExtractor:
 
     def retrieveObjectsFromPrep(self, verbnode, prepnode):
         for child in self.G.successors(prepnode):
-            if child.attribute in ('pobj', 'dobj'):
+            if child.attribute in ('pobj') and child.POS in ('NN'):
+                verbnode.where = child
+            elif child.attribute in ('pobj', 'dobj'):
                 verbnode.objects.append(child)
+
         return verbnode
+
+
+    def retrieve_children_of_noun(self, nounnode, objects):
+        for edges in list(nx.bfs_edges(self.G, nounnode)):
+            if (edges[1].attribute in ('num')):
+                objects.append(edges[1])
+        return objects
+
 
 
 

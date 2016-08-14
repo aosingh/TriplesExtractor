@@ -29,21 +29,19 @@ git clone https://github.com/aosingh/TriplesExtractor.git
         *   `pip install asciitree`
     *   numpy, package for scientific computing:
         *   `pip install numpy`
-Once you completed the above steps, you can build and test SyntaxNet with the
-following commands:
-
-```shell
-  git clone --recursive https://github.com/tensorflow/models.git
-  cd models/syntaxnet/tensorflow
-  ./configure
-  cd ..
-  bazel test syntaxnet/... util/utf8/...
-  # On Mac, run the following:
-  bazel test --linkopt=-headerpad_max_install_names \
-    syntaxnet/... util/utf8/...
-```
-
-Bazel should complete reporting all tests passed.
+    Once you completed the above steps, you can build and test SyntaxNet with the
+    following commands:
+    ```shell
+      git clone --recursive https://github.com/tensorflow/models.git
+      cd models/syntaxnet/tensorflow
+      ./configure
+      cd ..
+      bazel test syntaxnet/... util/utf8/...
+      # On Mac, run the following:
+      bazel test --linkopt=-headerpad_max_install_names \
+        syntaxnet/... util/utf8/...
+    ```
+    Bazel should complete reporting all tests passed.
 
 *   [nltk](http://www.nltk.org/)  
 *   [nltk.data](http://www.nltk.org/data.html)
