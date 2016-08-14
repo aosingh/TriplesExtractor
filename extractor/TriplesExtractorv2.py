@@ -175,22 +175,29 @@ class TriplesExtractor:
         for child in self.G.successors(verbnode.baseverb):
             if child.attribute in ('nsubj', 'nsubjpass'):
                 verbnode.subject.append(child)
+                verbnode = self.get_modifiers_Subject(child, verbnode)
         for child in self.G.predecessors(verbnode.baseverb):
             if child.attribute in ('nsubj', 'nsubjpass'):
                 verbnode.subject.append(child)
+                verbnode = self.get_modifiers_Subject(child, verbnode)
 
         if(verbnode.jj):
             for child in self.G.successors(verbnode.jj):
                 if child.attribute in ('nsubj'):
                     verbnode.subject.append(child)
+                    verbnode = self.get_modifiers_Subject(child, verbnode)
 
         if len(verbnode.subject) == 0:
             parent = self.G.predecessors(verbnode.baseverb)[0]
             while parent.POS not in ('NN', 'NNS') and (parent.attribute != 'ROOT'):
-                print parent.word
-                print parent.attribute
+                if parent.POS in ('VBD', 'VBN', 'VBG') and self.get_noun_from_verbphrase(parent) is not None:
+                    parent = self.get_noun_from_verbphrase(parent)
+                    break
                 parent = self.G.predecessors(parent)[0]
+            if(parent.attribute == 'ROOT') and self.get_noun_from_verbphrase(parent) is not None:
+                parent =self.get_noun_from_verbphrase(parent)
             verbnode.subject.append(parent)
+            verbnode = self.get_modifiers_Subject(parent, verbnode)
         return verbnode
 
 
@@ -201,7 +208,7 @@ class TriplesExtractor:
                 verbnode.objects.append(child)
 
             if child.attribute in ('prep'):
-                verbnode.objects.append(child)
+                verbnode.prep = child
                 verbnode = self.retrieveObjectsFromPrep(verbnode, child)
         if(verbnode.jj):
             for edges in list(nx.bfs_edges(self.G, verbnode.jj)):
@@ -212,11 +219,16 @@ class TriplesExtractor:
 
     def retrieveObjectsFromPrep(self, verbnode, prepnode):
         for child in self.G.successors(prepnode):
-            if child.attribute in ('pobj') and child.POS in ('NN'):
-                verbnode.where = child
+            if child.POS in ('CD'):
+                verbnode.prep = None
+                det, children = self.get_all_children(child)
+                verbnode.when = prepnode.word+" "+ det +" "+children+child.word
+            elif child.attribute in ('pobj') and child.POS in ('NN', 'NNP', 'NNS'):
+                verbnode.prep = None
+                det, children = self.get_all_children(child)
+                verbnode.where = prepnode.word+" "+ det +" "+children+child.word
             elif child.attribute in ('pobj', 'dobj'):
                 verbnode.objects.append(child)
-
         return verbnode
 
 
@@ -225,6 +237,33 @@ class TriplesExtractor:
             if (edges[1].attribute in ('num')):
                 objects.append(edges[1])
         return objects
+
+    def get_all_children(self, node):
+        det = ""
+        children = ""
+        for edges in list(nx.bfs_edges(self.G, node)):
+            if edges[1].attribute in ('det'):
+                det = edges[1].word
+            else:
+                children = children + edges[1].word+" "
+        return det, children
+
+    def get_noun_from_verbphrase(self, node):
+        for child in self.G.successors(node):
+            if(child.attribute in ('nsubj')):
+                return child
+        for child in self.G.successors(node):
+            if(child.POS in ('NN', 'NNS', "NNS")):
+                return child
+        return None
+
+    def get_modifiers_Subject(self, node, verbnode):
+        for edges in list(nx.bfs_edges(self.G, node)):
+            if(edges[0] == node and edges[1].POS in ('JJ', 'CD')):
+                verbnode.subject.append(edges[1])
+        return verbnode
+
+
 
 
 
